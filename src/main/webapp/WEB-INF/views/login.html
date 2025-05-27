@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>Login Screen</title>
+</head>
+<body>
+	<h1>Virtual Platform</h1><br>
+	
+	<p th:if="${errorMessage != null}" th:text="${errorMessage}" style="color: red;"></p>
+	
+	<form th:action="@{/login}" method="POST">
+		<label>Email:</label><br>
+		<input type="text" name="email"><br>
+		<label>Password:</label><br>
+		<input type="text" name="password"><br>
+		<button type="submit">Logar</button>
+	</form>
+	<p><a th:href="@{/register}">Register account</a></p>
+	<p><a th:href="@{/forgot-password}">I forgot my password...</a></p>
+</body>
+</html>
